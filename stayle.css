@@ -1,0 +1,218 @@
+/* Maxsus ochiq ko'k va noodatiy ranglar palitrasi */
+:root {
+    --bg-color: #e3faffc2; /* Ochiq neon-ko'k fon */
+    --card-bg: #ffffff;
+    --accent-pink: #ff3366; /* Noyob kontrast uchun yorqin pushti */
+    --text-dark: #1a2536;
+    --electric-blue: #00d2ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    padding-bottom: 50px;
+}
+
+/* Noyob asimmetrik header */
+header {
+    background: linear-gradient(135deg, var(--electric-blue), #0072ff);
+    padding: 20px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.2);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px var(--accent-pink);
+}
+
+/* Tilni o'zgartirish tugmalari */
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid transparent;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active, .lang-btn:hover {
+    background: var(--accent-pink);
+    border-color: white;
+    transform: scale(1.1);
+}
+
+/* Sarlavha zonasi */
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Kategoriya tugmalari */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.cat-btn {
+    background: var(--card-bg);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+    background: var(--text-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Asimmetrik va qiya menyu kartochkalari */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 10px 10px 0px rgba(0, 210, 255, 0.15);
+    border: 3px solid var(--text-dark);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 15px 15px 0px var(--accent-pink);
+}
+
+/* Emoji uchun vizual doira */
+.card-image-holder {
+    height: 180px;
+    background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    position: relative;
+}
+
+/* Qiya chiziq effekti */
+.card-image-holder::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: var(--card-bg);
+    transform: skewY(-4px);
+    transform-origin: bottom left;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: #55657e;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--accent-pink);
+}
+
+.order-btn {
+    background: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.order-btn:hover {
+    background: var(--accent-pink);
+}
+
+/* Telefonlar uchun (Responsive) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    .menu-grid {
+        gap: 25px;
+    }
+    .cat-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}

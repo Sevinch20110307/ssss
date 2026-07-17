@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic FastFood & Drinks</title>
+    <!-- CSS faylni ulash -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cyber Food</div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="changeLanguage('uz')">UZ</button>          <button class="lang-btn" onclick="changeLanguage('ru')">RU</button>
+            <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1 id="hero-title">Kelajak Taomlari</h1>
+        <div class="categories">
+            <button class="cat-btn active" onclick="filterMenu('all', this)" id="cat-all">Barchasi</button>
+            <button class="cat-btn" onclick="filterMenu('fastfood', this)" id="cat-food">Fast Food</button>
+            <button class="cat-btn" onclick="filterMenu('drinks', this)" id="cat-drinks">Ichimliklar</button>
+        </div>
+    </section>
+
+    <main class="menu-grid" id="menu-container">
+        <!-- Mahsulotlar JS orqali shu yerga joylashadi -->
+    </main>
+
+    <!-- JS faylni ulash -->
+    <script src="script.js"></script>
+</body>
+</html>
+<head>
+    
